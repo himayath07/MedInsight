@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useEffect, useState } from "react"
+import * as React from 'react';
+const { createContext, useContext, useEffect, useState } = React;
 
 type Theme = "dark" | "light" | "system"
 
@@ -26,26 +27,36 @@ export function ThemeProvider({
   storageKey = "vite-ui-theme",
   ...props
 }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<Theme>(
-    () => (localStorage.getItem(storageKey) as Theme) || defaultTheme
-  )
+  const [theme, setTheme] = useState<Theme>(() => {
+    // Only access localStorage on the client side
+    if (typeof window !== 'undefined') {
+      const storedTheme = localStorage.getItem(storageKey) as Theme | null;
+      return storedTheme || defaultTheme;
+    }
+    return defaultTheme;
+  });
 
   useEffect(() => {
-    const root = window.document.documentElement
-
-    root.classList.remove("light", "dark")
-
-    if (theme === "system") {
-      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
-        .matches
-        ? "dark"
-        : "light"
-
-      root.classList.add(systemTheme)
-      return
+    const root = window.document.documentElement;
+    
+    // Remove all theme classes first
+    root.classList.remove('light', 'dark');
+    
+    // Determine the theme to apply
+    let themeToApply = theme;
+    if (theme === 'system') {
+      themeToApply = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     }
-
-    root.classList.add(theme)
+    
+    // Apply the theme
+    root.classList.add(themeToApply);
+    
+    // Save to localStorage
+    if (theme !== 'system') {
+      localStorage.setItem(storageKey, theme);
+    } else {
+      localStorage.removeItem(storageKey);
+    }
   }, [theme])
 
   const value = {
