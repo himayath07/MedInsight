@@ -4,4 +4,14 @@ import tsconfigPaths from "vite-tsconfig-paths"
 
 export default defineConfig({
   plugins: [react(), tsconfigPaths()],
+  base: './', // This ensures assets are loaded correctly in production
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    sourcemap: true
+  },
+  server: {
+    port: 3000,
+    open: true
+  }
 })
