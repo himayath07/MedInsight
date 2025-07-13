@@ -1,0 +1,68 @@
+City,Centre Name,Address,Location/Area,Mobile Number,Services,Timings
+Bangalore,Apollo Diagnostics 1,"123 Main Road, Bangalore, India",Central Area,+91 9876543210,"Blood Test, X-Ray",8 AM - 8 PM
+Bangalore,Thyrocare,"456 MG Road, Bangalore, India",MG Road,+91 9123456780,"Thyroid Panel, Full Body Checkup",7 AM - 9 PM
+Bangalore,SRL Diagnostics,"789 Indiranagar, Bangalore, India",Indiranagar,+91 9988776655,"COVID-19 Test, MRI",6 AM - 10 PM
+Bangalore,Healthians,"1011 Koramangala, Bangalore, India",Koramangala,+91 9876547890,"Blood Test, Diabetes Test",6 AM - 8 PM
+Bangalore,Dr Lal PathLabs,"1213 Whitefield, Bangalore, India",Whitefield,+91 9765432109,General Checkup,7 AM - 7 PM
+Mumbai,Metropolis Healthcare,"22 Bandra West, Mumbai, India",Bandra West,+91 9988771122,"Full Body Checkup, Thyroid",7 AM - 9 PM
+Mumbai,Apollo Diagnostics 2,"33 Andheri East, Mumbai, India",Andheri East,+91 9123456711,"CBC, X-Ray",8 AM - 8 PM
+Mumbai,SRL Diagnostics,"44 Dadar, Mumbai, India",Dadar,+91 9898989898,"MRI, CT Scan",6 AM - 9 PM
+Mumbai,Suburban Diagnostics,"55 Malad, Mumbai, India",Malad,+91 9765412345,"Vitamin D, Blood Sugar",7 AM - 10 PM
+Mumbai,Healthspring,"66 Powai, Mumbai, India",Powai,+91 9456123789,"Pathology, Radiology",7 AM - 8 PM
+Delhi,Dr Lal PathLabs,"77 Connaught Place, Delhi, India",Connaught Place,+91 9784561230,"Blood Test, Urine Test",7 AM - 9 PM
+Delhi,Thyrocare,"88 Karol Bagh, Delhi, India",Karol Bagh,+91 9345678901,"Thyroid, Hormone Test",6 AM - 10 PM
+Delhi,Healthians,"99 Saket, Delhi, India",Saket,+91 9012345678,"Diabetes, Kidney Test",7 AM - 8 PM
+Delhi,Metropolis Labs,"100 Rohini, Delhi, India",Rohini,+91 9876547891,"Liver Function, CBC",7 AM - 9 PM
+Delhi,SRL Diagnostics,"101 Vasant Kunj, Delhi, India",Vasant Kunj,+91 9765432188,"MRI, CT Scan",6 AM - 9 PM
+Hyderabad,Lucid Diagnostics,"111 Banjara Hills, Hyderabad, India",Banjara Hills,+91 9988776611,"Blood Test, X-Ray",7 AM - 9 PM
+Hyderabad,Vijaya Diagnostic,"222 Ameerpet, Hyderabad, India",Ameerpet,+91 9765123498,"Diabetes, Liver Test",6 AM - 8 PM
+Hyderabad,Apollo Diagnostics,"333 Secunderabad, Hyderabad, India",Secunderabad,+91 9876543098,Full Body Checkup,6 AM - 9 PM
+Hyderabad,Tenet Diagnostics,"444 Jubilee Hills, Hyderabad, India",Jubilee Hills,+91 9654781230,"MRI, CT Scan",6 AM - 9 PM
+Hyderabad,PathCare Labs,"555 Gachibowli, Hyderabad, India",Gachibowli,+91 9012341278,"Allergy Test, CBC",7 AM - 8 PM
+Chennai,Apollo Diagnostics,"11 T Nagar, Chennai, India",T Nagar,+91 9012349087,"Blood Test, Lipid Profile",6 AM - 9 PM
+Chennai,Aarthi Scans,"22 Adyar, Chennai, India",Adyar,+91 9654789087,"MRI, Ultrasound",7 AM - 9 PM
+Chennai,Precision Diagnostics,"33 Velachery, Chennai, India",Velachery,+91 9345672198,"Blood Sugar, Liver Panel",7 AM - 8 PM
+Chennai,Medall Diagnostics,"44 Anna Nagar, Chennai, India",Anna Nagar,+91 9876501234,"X-Ray, Thyroid",6 AM - 9 PM
+Chennai,Vision Diagnostics,"55 Nungambakkam, Chennai, India",Nungambakkam,+91 9988776600,Full Body Checkup,7 AM - 8 PM
+Kolkata,Apollo Diagnostics,"12 Park Street, Kolkata, India",Park Street,+91 9812345670,"Blood Test, X-Ray",7 AM - 8 PM
+Kolkata,Thyrocare,"34 Salt Lake, Kolkata, India",Salt Lake,+91 9912345670,"Thyroid Panel, Full Body Checkup",6 AM - 9 PM
+Kolkata,SRL Diagnostics,"56 Howrah, Kolkata, India",Howrah,+91 9812312345,"COVID-19 Test, MRI",7 AM - 8 PM
+Kolkata,Dr Lal PathLabs,"78 Gariahat, Kolkata, India",Gariahat,+91 9712312345,General Checkup,7 AM - 7 PM
+Kolkata,Healthians,"90 Behala, Kolkata, India",Behala,+91 9612312345,"Blood Test, Sugar Test",6 AM - 8 PM
+Kolkata,Medica Diagnostics,"123 New Town, Kolkata, India",New Town,+91 9512312345,"MRI, ECG",8 AM - 9 PM
+Pune,Ruby Hall Diagnostics,"12 Dhole Patil Road, Pune, India",Dhole Patil Road,+91 9911223344,Full Body Checkup,7 AM - 9 PM
+Pune,Jehangir Diagnostics,"45 Sassoon Road, Pune, India",Sassoon Road,+91 9811122233,"Blood Test, X-Ray",6 AM - 10 PM
+Pune,Dr Lal PathLabs,"67 Aundh, Pune, India",Aundh,+91 9611122233,"Liver Function, CBC",7 AM - 9 PM
+Pune,Metropolis Healthcare,"89 Kothrud, Pune, India",Kothrud,+91 9511122233,"MRI, CT Scan",7 AM - 8 PM
+Pune,Healthians,"101 Hinjewadi, Pune, India",Hinjewadi,+91 9411122233,"Blood Sugar, Kidney Test",6 AM - 8 PM
+Pune,City X-Ray,"123 Hadapsar, Pune, India",Hadapsar,+91 9311122233,"X-Ray, ECG",8 AM - 9 PM
+Ahmedabad,Aarthi Scans,"23 Navrangpura, Ahmedabad, India",Navrangpura,+91 9111122233,"MRI, CT Scan",7 AM - 8 PM
+Ahmedabad,Metropolis Labs,"56 Paldi, Ahmedabad, India",Paldi,+91 9011122233,Full Body Checkup,6 AM - 9 PM
+Ahmedabad,Dr Lal PathLabs,"78 Maninagar, Ahmedabad, India",Maninagar,+91 8911122233,"Blood Test, CBC",7 AM - 8 PM
+Ahmedabad,SRL Diagnostics,"89 Ellisbridge, Ahmedabad, India",Ellisbridge,+91 8811122233,"CT Scan, X-Ray",7 AM - 9 PM
+Ahmedabad,Thyrocare,"90 Gota, Ahmedabad, India",Gota,+91 8711122233,"Thyroid Test, Hormone Panel",6 AM - 9 PM
+Ahmedabad,Healthians,"101 Naranpura, Ahmedabad, India",Naranpura,+91 8611122233,"Diabetes, Kidney Test",6 AM - 8 PM
+Jaipur,Thyrocare,"12 C-Scheme, Jaipur, India",C-Scheme,+91 8511122233,Full Body Checkup,7 AM - 9 PM
+Jaipur,Dr Lal PathLabs,"23 Malviya Nagar, Jaipur, India",Malviya Nagar,+91 8411122233,"CBC, Sugar Test",6 AM - 8 PM
+Jaipur,SRL Diagnostics,"34 Vaishali Nagar, Jaipur, India",Vaishali Nagar,+91 8311122233,"MRI, CT Scan",6 AM - 9 PM
+Jaipur,Medall Diagnostics,"45 Tonk Road, Jaipur, India",Tonk Road,+91 8211122233,Liver Function Test,7 AM - 9 PM
+Jaipur,Healthians,"56 Mansarovar, Jaipur, India",Mansarovar,+91 8111122233,Blood Test,6 AM - 8 PM
+Jaipur,Aarthi Scans,"67 Jhotwara, Jaipur, India",Jhotwara,+91 8011122233,"Ultrasound, ECG",7 AM - 9 PM
+Lucknow,Thyrocare,"12 Hazratganj, Lucknow, India",Hazratganj,+91 8911223344,Thyroid Test,6 AM - 9 PM
+Lucknow,SRL Diagnostics,"45 Alambagh, Lucknow, India",Alambagh,+91 8811223344,"MRI, CT Scan",7 AM - 9 PM
+Lucknow,Healthians,"67 Gomti Nagar, Lucknow, India",Gomti Nagar,+91 8711223344,Diabetes Test,6 AM - 8 PM
+Lucknow,Dr Lal PathLabs,"89 Indira Nagar, Lucknow, India",Indira Nagar,+91 8611223344,"CBC, X-Ray",7 AM - 8 PM
+Lucknow,Apollo Diagnostics,"90 Rajajipuram, Lucknow, India",Rajajipuram,+91 8511223344,Blood Test,7 AM - 9 PM
+Lucknow,Medics Labs,"101 Charbagh, Lucknow, India",Charbagh,+91 8411223344,"ECG, Liver Test",7 AM - 9 PM
+Chandigarh,Thyrocare,"12 Sector 17, Chandigarh, India",Sector 17,+91 8311223344,"Thyroid, Liver",6 AM - 9 PM
+Chandigarh,SRL Diagnostics,"34 Sector 22, Chandigarh, India",Sector 22,+91 8211223344,"CT Scan, MRI",7 AM - 9 PM
+Chandigarh,Healthians,"56 Sector 46, Chandigarh, India",Sector 46,+91 8111223344,"Kidney, Blood Sugar",6 AM - 8 PM
+Chandigarh,Dr Lal PathLabs,"78 Sector 44, Chandigarh, India",Sector 44,+91 8011223344,"CBC, General",7 AM - 8 PM
+Chandigarh,Apollo Diagnostics,"89 Sector 34, Chandigarh, India",Sector 34,+91 7911223344,"Full Body, X-Ray",7 AM - 9 PM
+Chandigarh,City X-Ray,"101 Manimajra, Chandigarh, India",Manimajra,+91 7811223344,"ECG, X-Ray",8 AM - 9 PM
+Bhopal,Thyrocare,"12 MP Nagar, Bhopal, India",MP Nagar,+91 7711223344,Thyroid Test,6 AM - 9 PM
+Bhopal,SRL Diagnostics,"34 Arera Colony, Bhopal, India",Arera Colony,+91 7611223344,CT Scan,7 AM - 9 PM
+Bhopal,Healthians,"56 Kolar Road, Bhopal, India",Kolar Road,+91 7511223344,"Diabetes, Blood Test",6 AM - 8 PM
+Bhopal,Dr Lal PathLabs,"78 Lalghati, Bhopal, India",Lalghati,+91 7411223344,General Checkup,7 AM - 8 PM
+Bhopal,Apollo Diagnostics,"89 Bittan Market, Bhopal, India",Bittan Market,+91 7311223344,"X-Ray, Blood Test",7 AM - 9 PM
+Bhopal,Nidan Diagnostics,"101 TT Nagar, Bhopal, India",TT Nagar,+91 7211223344,"ECG, Lipid Profile",8 AM - 9 PM
