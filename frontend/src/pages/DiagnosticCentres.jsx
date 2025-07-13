@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Papa from "papaparse";
+import csvFile from "../../public/diagnostic_centres.csv?raw";
 
 const topIndianCities = [
   "Mumbai",
@@ -61,26 +62,48 @@ const DiagnosticCentres = () => {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    setLoading(true);
-    Papa.parse("/diagnostic_centres.csv", {
-      download: true,
-      header: true,
-      skipEmptyLines: true,
-      complete: (results) => {
-        setAllCentres(results.data);
-        setLoading(false);
-      },
-      error: (err) => {
-        setError("Failed to load diagnostic centres data.");
+    const loadCSV = () => {
+      setLoading(true);
+      setError("");
+      
+      try {
+        // Parse the CSV text directly from the imported file
+        Papa.parse(csvFile, {
+          header: true,
+          skipEmptyLines: true,
+          complete: (results) => {
+            // Filter out any empty rows and ensure City field exists
+            const validCentres = results.data.filter(centre => 
+              centre && centre.City && centre.City.trim() !== ''
+            );
+            console.log('Parsed centres:', validCentres);
+            setAllCentres(validCentres);
+            setLoading(false);
+          },
+          error: (parseError) => {
+            console.error('Error parsing CSV:', parseError);
+            setError("Error parsing diagnostic centres data.");
+            setLoading(false);
+          }
+        });
+      } catch (err) {
+        console.error('Error loading CSV:', err);
+        setError(`Failed to load diagnostic centres data: ${err.message}`);
         setLoading(false);
       }
-    });
+    };
+    
+    loadCSV();
   }, []);
 
   // Filter centres by selected city
   const centres = selectedCity
-    ? allCentres.filter(c => c.City && c.City.toLowerCase() === selectedCity.toLowerCase())
+    ? allCentres.filter(c => c.City && c.City.trim().toLowerCase() === selectedCity.trim().toLowerCase())
     : [];
+    
+  console.log('Selected City:', selectedCity);
+  console.log('All Centres:', allCentres);
+  console.log('Filtered Centres:', centres);
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-50 to-white dark:from-zinc-900 dark:to-zinc-800 p-2 sm:p-4">
@@ -109,7 +132,17 @@ const DiagnosticCentres = () => {
       )}
       {selectedCity && !loading && !error && (
         <div className="mt-12 w-full max-w-2xl">
-          <h2 className="text-2xl font-bold text-blue-700 dark:text-blue-200 mb-4 text-center">Top Diagnostic Centres in {selectedCity}</h2>
+          <div className="flex justify-between items-center mb-4">
+            <h2 className="text-2xl font-bold text-blue-700 dark:text-blue-200">
+              Diagnostic Centres in {selectedCity}
+            </h2>
+            <button 
+              onClick={() => setSelectedCity(null)}
+              className="text-blue-600 dark:text-blue-400 hover:underline text-sm"
+            >
+              Change City
+            </button>
+          </div>
           {centres.length === 0 ? (
             <div className="text-center text-gray-500">No centres found for this city.</div>
           ) : (

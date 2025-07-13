@@ -447,15 +447,19 @@ const MedicationReminder = () => {
           medications.map(medication => (
             <Card key={medication.id} className="hover:shadow-md transition-shadow">
               <CardContent className="p-6">
-                <div className="flex justify-between items-start">
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                      {medication.name}
-                    </h3>
-                    <div className="flex items-center mt-1 text-gray-600 dark:text-gray-300">
-                      <Clock className="h-4 w-4 mr-2 text-blue-500" />
-                      <span className="font-medium">{medication.time}</span>
-                      <span className="mx-2">•</span>
+                <div className="flex flex-col sm:flex-row justify-between gap-4">
+                  <div className="flex-1">
+                    <div className="flex justify-between items-start gap-2">
+                      <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                        {medication.name}
+                      </h3>
+                    </div>
+                    <div className="flex items-center mt-1 text-gray-600 dark:text-gray-300 flex-wrap gap-1">
+                      <span className="flex items-center">
+                        <Clock className="h-4 w-4 mr-1 text-blue-500 flex-shrink-0" />
+                        <span className="font-medium">{medication.time}</span>
+                      </span>
+                      <span className="hidden sm:inline">•</span>
                       <span>Dosage: {medication.dosage}</span>
                     </div>
                     
@@ -465,7 +469,7 @@ const MedicationReminder = () => {
                       </p>
                     )}
                     
-                    <div className="flex gap-1 mt-3">
+                    <div className="flex flex-wrap gap-1 mt-3">
                       {Object.entries(medication.days || {}).map(([day, isActive]) => (
                         isActive && (
                           <span 
@@ -479,42 +483,45 @@ const MedicationReminder = () => {
                     </div>
                   </div>
                   
-                  <div className="flex gap-2 mb-3">
-  <Button
-    variant="outline"
-    size="sm"
-    className="text-green-600 border-green-600 hover:bg-green-50 dark:hover:bg-green-900/20"
-    onClick={() => logMedicationAction(medication, "taken")}
-  >
-    Mark Taken
-  </Button>
-  <Button
-    variant="outline"
-    size="sm"
-    className="text-yellow-600 border-yellow-600 hover:bg-yellow-50 dark:hover:bg-yellow-900/20"
-    onClick={() => logMedicationAction(medication, "skipped")}
-  >
-    Skip
-  </Button>
-</div>
-<div className="flex gap-2">
-                    <Button 
-                      variant="outline" 
-                      size="sm" 
-                      onClick={() => handleEdit(medication)}
-                    >
-                      <Pencil className="h-4 w-4 mr-1" />
-                      Edit
-                    </Button>
-                    <Button 
-                      variant="outline" 
-                      size="sm" 
-                      className="text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20"
-                      onClick={() => handleDelete(medication.id)}
-                    >
-                      <Trash2 className="h-4 w-4 mr-1" />
-                      Delete
-                    </Button>
+                  <div className="flex flex-col sm:flex-row gap-2">
+                    <div className="flex gap-2">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="text-green-600 border-green-600 hover:bg-green-50 dark:hover:bg-green-900/20 flex-1 sm:flex-initial"
+                        onClick={() => logMedicationAction(medication, "taken")}
+                      >
+                        <span className="hidden sm:inline">Mark </span>Taken
+                      </Button>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="text-yellow-600 border-yellow-600 hover:bg-yellow-50 dark:hover:bg-yellow-900/20 flex-1 sm:flex-initial"
+                        onClick={() => logMedicationAction(medication, "skipped")}
+                      >
+                        Skip
+                      </Button>
+                    </div>
+                    <div className="flex gap-2">
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        className="flex-1 sm:flex-initial"
+                        onClick={() => handleEdit(medication)}
+                      >
+                        <Pencil className="h-4 w-4 sm:mr-1" />
+                        <span className="hidden sm:inline">Edit</span>
+                      </Button>
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        className="text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 flex-1 sm:flex-initial"
+                        onClick={() => handleDelete(medication.id)}
+                      >
+                        <Trash2 className="h-4 w-4 sm:mr-1" />
+                        <span className="hidden sm:inline">Delete</span>
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </CardContent>
