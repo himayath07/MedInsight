@@ -25,30 +25,18 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-sm dark:bg-zinc-950/80 backdrop:blur-lg">
       <div className="container flex h-20 items-center justify-between px-4 sm:px-6">
-        <div className="flex items-center gap-4">
-          {/* Mobile menu button */}
-          <Button 
-            variant="ghost" 
-            size="icon" 
-            className="md:hidden"
-            onClick={toggleMenu}
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </Button>
-          
+        <div className="flex items-center">
           <Link to="/" className="flex items-center gap-2 text-lg font-semibold transition-colors group">
             <div className="flex items-center justify-center h-12 w-12 sm:h-14 sm:w-14">
               <img src={logo} alt="Logo" className="h-8 w-8 sm:h-10 sm:w-10 object-contain" />
             </div>
             <div className="flex flex-col">
               <span className="font-bold text-xl bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">MedInsight</span>
-              <span className="text-xs text-gray-500 dark:text-gray-400 -mt-1">AI-Powered Diagnosis</span>
             </div>
           </Link>
         </div>
         
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-1">
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-1">
             <Button 
@@ -110,11 +98,26 @@ const Header = () => {
                 <span>Diagnostic Centres</span>
               </Link>
             </Button>
+
+            {/* Theme Toggle - Desktop */}
+            <div className="ml-2">
+              <ModeToggle />
+            </div>
           </nav>
           
-          {/* Mobile Navigation */}
-          <div className="md:hidden">
-            <ModeToggle />
+          {/* Mobile Menu and Theme Toggle */}
+          <div className="flex items-center gap-1 md:hidden">
+            <div className="ml-1">
+              <ModeToggle />
+            </div>
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              onClick={toggleMenu}
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </Button>
           </div>
         </div>
       </div>
@@ -185,11 +188,6 @@ const Header = () => {
           </nav>
         </div>
       )}
-      
-      {/* Desktop Theme Toggle */}
-      <div className="hidden md:flex items-center gap-2">
-        <ModeToggle />
-      </div>
     </header>
   );
 };

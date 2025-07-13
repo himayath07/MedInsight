@@ -20,48 +20,37 @@ const topIndianCities = [
 
 
 // Format time to 12-hour format with AM/PM
-const formatTime = (timeString) => {
-  if (!timeString) return 'N/A';
+const parseTiming = (timingStr) => {
+  if (!timingStr) return { open: 'N/A', close: 'N/A' };
   
-  // Handle different time formats
-  const time = timeString.includes(':') 
-    ? timeString.trim() 
-    : `${timeString.slice(0, 2)}:${timeString.slice(2)}`;
-  
-  const [hours, minutes] = time.split(':');
-  const hour = parseInt(hours, 10);
-  const ampm = hour >= 12 ? 'PM' : 'AM';
-  const hour12 = hour % 12 || 12;
-  
-  return `${hour12}:${minutes || '00'} ${ampm}`;
+  // Handle formats like "8 AM - 8 PM" or "8:00 AM - 8:00 PM"
+  const [openStr, closeStr] = timingStr.split('-').map(s => s.trim());
+  return {
+    open: openStr || 'N/A',
+    close: closeStr || 'N/A'
+  };
+};
+
+const formatTime = (timeStr) => {
+  if (!timeStr) return 'N/A';
+  // Clean up the time string (remove extra spaces, ensure consistent format)
+  return timeStr.replace(/\s+/g, ' ').trim();
 };
 
 // Check if the center is currently open
-const getCurrentStatus = (openingTime, closingTime) => {
-  if (!openingTime || !closingTime) return 'Timing not available';
+const getCurrentStatus = (timingStr) => {
+  if (!timingStr) return 'Timing not available';
   
-  const now = new Date();
-  const currentHours = now.getHours();
-  const currentMinutes = now.getMinutes();
-  
-  const [openHour, openMinute] = openingTime.includes(':') 
-    ? openingTime.split(':').map(Number) 
-    : [Number(openingTime.slice(0, 2)), Number(openingTime.slice(2) || 0)];
+  try {
+    const { open, close } = parseTiming(timingStr);
+    if (open === 'N/A' || close === 'N/A') return 'Timing not available';
     
-  const [closeHour, closeMinute] = closingTime.includes(':')
-    ? closingTime.split(':').map(Number)
-    : [Number(closingTime.slice(0, 2)), Number(closingTime.slice(2) || 0)];
-  
-  const currentTotalMinutes = currentHours * 60 + currentMinutes;
-  const openTotalMinutes = openHour * 60 + (openMinute || 0);
-  const closeTotalMinutes = closeHour * 60 + (closeMinute || 0);
-  
-  if (currentTotalMinutes >= openTotalMinutes && currentTotalMinutes <= closeTotalMinutes) {
-    return 'Open Now';
-  } else if (currentTotalMinutes < openTotalMinutes) {
-    return `Opens at ${formatTime(openingTime)}`;
-  } else {
-    return `Opens tomorrow at ${formatTime(openingTime)}`;
+    // For simplicity, we'll just return the timing string for now
+    // A more robust implementation would parse the actual times
+    return `Open ${open} - ${close}`;
+  } catch (error) {
+    console.error('Error parsing timing:', error);
+    return timingStr || 'Timing not available';
   }
 };
 
@@ -143,25 +132,17 @@ const DiagnosticCentres = () => {
                   </div>
                   <div className="mt-3">
                     <div className="flex items-center gap-2 mb-1">
-                      <span className="font-semibold text-sm">Timings:</span>
+                      <span className="font-semibold text-sm">Status:</span>
                       <div className="flex items-center gap-1 text-sm">
                         <span className="text-green-600 dark:text-green-400 font-medium">
-                          {getCurrentStatus(centre["Opening Time"], centre["Closing Time"])}
+                          {getCurrentStatus(centre["Timings"])}
                         </span>
                       </div>
                     </div>
-                    <div className="grid grid-cols-2 gap-2 text-sm">
-                      <div className="bg-blue-50 dark:bg-blue-900/30 rounded-lg p-2">
-                        <div className="font-medium text-blue-700 dark:text-blue-300">Open Hours</div>
-                        <div className="text-gray-700 dark:text-gray-300">
-                          {formatTime(centre["Opening Time"])} - {formatTime(centre["Closing Time"])}
-                        </div>
-                      </div>
-                      <div className="bg-blue-50 dark:bg-blue-900/30 rounded-lg p-2">
-                        <div className="font-medium text-blue-700 dark:text-blue-300">Days Open</div>
-                        <div className="text-gray-700 dark:text-gray-300">
-                          {centre["Working Days"] || 'Monday - Sunday'}
-                        </div>
+                    <div className="bg-blue-50 dark:bg-blue-900/30 rounded-lg p-3 mt-2">
+                      <div className="font-medium text-blue-700 dark:text-blue-300 mb-1">Working Hours</div>
+                      <div className="text-gray-700 dark:text-gray-300">
+                        {formatTime(centre["Timings"])}
                       </div>
                     </div>
                   </div>
